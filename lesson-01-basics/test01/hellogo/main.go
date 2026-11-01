@@ -11,5 +11,5 @@ func main() {
 	// 第一行用 fmt.Println——它会自动换行。
 	// 第二行用 fmt.Printf——它不会自动换行，\n 要自己写。
 	fmt.Println("hello,go")
-	fmt.print("hello,红岩网校"\n)
+	fmt.printf("hello,红岩网校"\n)
 }
