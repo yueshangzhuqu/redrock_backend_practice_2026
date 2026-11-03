@@ -13,27 +13,17 @@ func add(a, b int) int {
 	// TODO: 用 Go 的函数返回语法完成加法。
 	// C：int add(int a, int b) { return a + b; }
 	// Go：返回类型写在参数列表后面。
-<<<<<<< Updated upstream
-	return a+b
-=======
+
 	return a + b
->>>>>>> Stashed changes
+
+	return a + b
+
 }
 
 // ClassifyNumber 在 n 大于 0 时返回 "positive"，
 // 等于 0 时返回 "zero"，小于 0 时返回 "negative"。
 func ClassifyNumber(n int) string {
-<<<<<<< Updated upstream
-	if n>0{
-		return "positive"
-		}
-	if n<0{
-		return "negative"
-		}
-	if n==0{
-		return "zero"
-		}
-=======
+
 	if n > 0 {
 		return "positive"
 	}
@@ -43,7 +33,17 @@ func ClassifyNumber(n int) string {
 	if n == 0 {
 		return "zero"
 	}
->>>>>>> Stashed changes
+
+	if n > 0 {
+		return "positive"
+	}
+	if n < 0 {
+		return "negative"
+	}
+	if n == 0 {
+		return "zero"
+	}
+
 	// TODO: 用 if / else if / else 完成三个分支。
 	// Go 的 if 条件不写小括号，左大括号必须和 if 同一行
 	return ""
