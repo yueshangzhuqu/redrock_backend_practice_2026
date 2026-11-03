@@ -11,22 +11,28 @@ type User struct {
 // 因为 age 是小写字段，其他包无法自己填它，只能通过这个构造函数。
 func NewUser(name string, age int) *User {
 	// TODO: 同时保存传入的 name 和 age。
-	return &User{}
+	return &User{
+		Name: name,
+		age:  age,
+	}
 }
 
 // Age 把小写字段 age 以只读的方式暴露给其他包。
 func (u *User) Age() int {
 	// TODO: 返回小写字段 age。
-	return 0
+	return u.age
 }
 
 // Grow 是其他包唯一能用来增加年龄的入口。
-func (u *User) Grow() {
+func (u *User) Grow() int {
+	return u.grow()
 	// TODO: 调用包内的小写方法 grow，不要在这里直接写 u.age++。
 }
 
 // grow 只在 visibility 包内可见。
-func (u *User) grow() {
+func (u *User) grow() int {
+	u.age += 1
+	return u.age
 	// TODO: 把 age 增加 1。
 }
 
@@ -35,5 +41,5 @@ func (u *User) grow() {
 // Go 的小写标识符是「包内可见」，不是 C 的 static「文件内可见」。
 func (u *User) Stage() string {
 	// TODO: 用 stage 函数把 age 换算成阶段字符串。
-	return ""
+	return stage(u.age)
 }
